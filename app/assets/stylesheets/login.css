@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+.login {
+    background-size: cover;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    /* padding: 2rem; */
+    max-width: 400px;
+    margin: auto;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login__white-container {
+    background-color: rgba(246, 246, 246, 0.8);
+    padding: 5rem 2rem 5rem 2rem;
+    border-radius: 55px 55px 25px 25px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    /* x-offset: 0, y-offset: 4px, blur: 4px, spread: 0 */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Added border */
+    min-width: 200px;
+}
+
+.login__pink-container {
+    background-color: #ED8E83;
+    padding: 5rem 2rem 2rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
+    /* x-offset: 0, y-offset: 4px, blur: 4px, spread: 0 */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.login__header {
+    font-size: 20px;
+    color: #EF3C23;
+    text-align: center;
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #CFE5CC;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 16px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: #F15A42;
+    color: rgba(246, 246, 246, 0.8);
+    cursor: pointer;
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 16px;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #EF3C23;
+}
+
+.login-form .forgot-password-link {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: #1B4793;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.login-form .forgot-password-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.login__plain-text {
+    color: #EF3C23;
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 16px;
+    text-align: center;
+}
+
+.signup-link {
+    display: block;
+    color: #1B4793;
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    margin-top: -17px;
+}
+
+.signup-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+}

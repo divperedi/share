@@ -1,0 +1,22 @@
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+
+<div class="login">
+  <%= image_tag 'login.png', alt: 'landing background', class: 'login' %>
+  <div class="login-form">
+    <div class="login__pink-container">
+      <div class="login__white-container">
+        <h1 class="login__header">LOGIN TO SHARE</h1>
+        <%= form_with url: session_path do |form| %>
+          <%= form.text_field :login, required: true, autofocus: true, placeholder: "email or username", value: params[:login] %><br>
+          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "password", maxlength: 72 %><br>
+          <%= form.submit "SIGN IN" %>
+        <% end %>
+        <%= link_to "Forgot password?", new_password_path, class: "forgot-password-link" %>
+        <p class="login__plain-text">Not a member yet?</p>
+        <%= link_to "Create an account", signup_path, class: "signup-link" %>
+      </div>
+    </div>
+  </div>
+</div>
+

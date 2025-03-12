@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+.lists-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 30px;
+    gap: 50px;
+}
+
+.my-lists,
+.shared,
+.ishare {
+    background-color: rgba(250, 201, 44, 0.8);
+    padding: 0;
+    border-radius: 13px 13px 0 0;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#posts-my,
+#posts-shared,
+#posts-ishare {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    padding: 30px;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 5px 5px;
+}
+
+#posts-my {
+    background-color: rgba(241, 90, 66, 0.7);
+}
+
+#posts-shared {
+    background-color: rgba(33, 120, 174, 0.7);
+}
+
+#posts-ishare {
+    background-color: #CFE5CC;
+}
+
+.my-lists-text,
+.shared-lists-text,
+.ishare-lists-text {
+    margin: 0;
+    padding: 20px;
+}
+
+.new-post-icon {
+    width: 60px; /* Adjust the size as needed */
+    height: 60px; /* Adjust the size as needed */
+    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    transition: transform 0.2s; /* Add a transition effect */
+    position: fixed; /* Fix the position relative to the viewport */
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.new-post-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}

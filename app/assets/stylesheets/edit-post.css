@@ -1,0 +1,155 @@
+.post-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-actions a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-actions a:hover {
+    text-decoration: none;
+    color: #F15A42;
+}
+
+.post-delete button {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(14, 14, 14);
+    color: white;
+    cursor: pointer;
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 18px;
+}
+
+.share-post-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    gap: 10px;
+}
+
+.single-post__actions {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+}
+
+.actions {
+    gap: 15px;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  position: relative; /* Add relative positioning */
+}
+
+.action-icon {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: absolute; /* Add absolute positioning */
+  right: 15px; /* Align to the right */
+  top: -55px;
+}
+
+.action-icon:hover {
+  color: #007bff;
+}
+
+.share-icon {
+  width: 24px;
+  height: 24px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.share-form {
+  margin-top: 20px;
+  display: none;
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.toggle-share-form-checkbox:checked + .share-form {
+  display: block;
+}
+
+.trix-content,
+.trix-button-group {
+    background-color: white;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.post-edit-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-edit-actions a {
+    text-decoration: none;
+    color: black;
+}
+
+.post-edit-actions a:hover {
+    text-decoration: none;
+    color: #F15A42;
+}
+
+/* .edit-heading {
+    text-align: center;
+} */
+
+.update-post-wrapper {
+    display: flex;
+    flex-direction: column;
+}

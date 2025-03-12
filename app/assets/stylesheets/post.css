@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+.single-post {
+    background-color: rgba(246, 246, 246, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 17px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; 
+}
+
+.single-post-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    align-self: stretch;
+    justify-self: stretch;
+}
+
+/* Custom scrollbar styles */
+.single-post-content::-webkit-scrollbar {
+    width: 3px; /* Width of the scrollbar */
+}
+
+.single-post-content::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+.single-post-content::-webkit-scrollbar-thumb {
+    background: #2178AE; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.single-post-content::-webkit-scrollbar-thumb:hover {
+    background: #1B4793; /* Color of the scrollbar thumb on hover */
+}
+
+.single-post-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .action-icon {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  .action-icon i {
+    margin-right: 5px;
+  }
+
+  .action-icon:hover {
+    color: #007bff;
+  }
+
+  .share-form {
+    margin-top: 10px;
+    display: none;
+  }
+
+  .toggle-share-form-checkbox:checked + .share-form {
+    display: block;
+  }

@@ -1,0 +1,16 @@
+<nav>
+  <%= link_to posts_path, class: "nav__logo-link" do %>
+    <h1 class="nav__logo">SHARE</h1>
+  <% end %>
+  <div class="profile-menu">
+    <label for="dropdown-toggle" class="profile-icon-label">
+      <%= image_tag 'profile.svg', alt: 'Profile', class: 'profile-icon' %>
+    </label>
+
+    <input type="checkbox" id="dropdown-toggle" class="hidden-checkbox" />
+
+    <div class="popup-menu">
+      <%= button_to "Log out", logout_path, method: :delete, class: 'logout-button' %>
+    </div>
+  </div>
+</nav>

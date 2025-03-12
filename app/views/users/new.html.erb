@@ -1,0 +1,31 @@
+<div class="login">
+  <%= image_tag 'login.png', alt: 'landing background', class: 'signup' %>
+  <div class="signup-form">
+    <div class="signup__pink-container">
+      <div class="signup__white-container">
+        <h1 class="signup__header">REGISTER TO SHARE</h1>
+        <%= form_with model: @user, url: signup_path, local: true, data: { turbo: false } do |form| %>
+          <%= form_field_with_errors(@user, :username) do %>
+            <%= form.text_field :username, required: true, autofocus: true, placeholder: "username", class: "form-control" %>
+          <% end %>
+          <br>
+          <%= form_field_with_errors(@user, :email_address) do %>
+            <%= form.email_field :email_address, required: true, autocomplete: "username", placeholder: "email", class: "form-control" %>
+          <% end %>
+          <br>
+          <%= form_field_with_errors(@user, :password) do %>
+            <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "password", maxlength: 72, class: "form-control" %>
+          <% end %>
+          <br>
+          <%= form_field_with_errors(@user, :password_confirmation) do %>
+            <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "password again", maxlength: 72, class: "form-control" %>
+          <% end %>
+          <br>
+          <%= form.submit "SIGN UP", class: "btn btn-primary" %>
+        <% end %>
+        <p class="signup__plain-text">Already have an account?</p>
+        <%= link_to "Log in", login_path, class: "signup-link" %>
+      </div>
+    </div>
+  </div>
+</div>

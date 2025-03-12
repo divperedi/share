@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: #F7B0BE;
+}
+
+.nav__logo {
+    font-family: "Instrument Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    font-variation-settings:
+        "wdth" 100;
+    color: #EF3C23;
+    font-size: 26px;
+    text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.2),
+        1px -1px 0 rgba(0, 0, 0, 0.2),
+        -1px 1px 0 rgba(0, 0, 0, 0.2),
+        1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.nav__logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.profile-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.popup-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    width: 80px;
+}
+
+.hidden-checkbox:checked+.popup-menu {
+    display: block;
+}
+
+.logout-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #EF3C23;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: instrument sans;
+    font-weight: 700;
+}
+
+.logout-button:hover {
+    transform: scale(1.1);
+}
+
+.nav__logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav__logo-link:hover .nav__logo {
+    text-decoration: none;
+}

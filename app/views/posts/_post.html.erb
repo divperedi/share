@@ -1,0 +1,52 @@
+<div class="whole-post"><%= link_to post_path(post), class: "single-post-link" do %>
+  <div id="<%= dom_id post %>" class="single-post">
+    <div class="single-post-content">
+      <p>
+        <strong>Title:</strong>
+        <%= post.title %>
+      </p>
+
+      <p>
+        <strong>Body:</strong>
+        <%= raw post.body %>
+      </p>
+
+      <p>
+        <strong>Created at:</strong>
+        <%= time_tag post.created_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M%P" %>
+      </p>
+
+      <p>
+        <strong>Updated at:</strong>
+        <%= time_tag post.updated_at, "data-local": "time", "data-format": "%B %e, %Y %l:%M%P" %>
+      </p>
+
+      <p>
+        <strong>Author:</strong>
+        <%= post.user ? post.user.username : "Unknown" %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+<% if defined?(show_share_form) && show_share_form %>
+  <div class="post-actions">
+    <label for="toggle-share-form-<%= post.id %>" class="action-icon">
+      <%= image_tag 'share-icon.svg', alt: 'Share', class: 'share-icon' %>
+    </label>
+  </div>
+
+  <input type="checkbox" id="toggle-share-form-<%= post.id %>" class="toggle-share-form-checkbox" style="display: none;">
+  <div class="share-form">
+    <%= form_with url: post_shared_posts_path(post), method: :post, local: true do |form| %>
+      <div class="field">
+        <%= form.label :username, "Share with user:" %>
+        <%= form.text_field :username %>
+      </div>
+      <div class="actions">
+        <%= form.submit "Share Post" %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+</div>

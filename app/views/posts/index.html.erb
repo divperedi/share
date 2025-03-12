@@ -1,0 +1,42 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Posts" %>
+
+<div class="lists-container">
+  <div class="personal-lists">
+    <div class="my-lists">
+      <h1 class="my-lists-text">MY LISTS</h1>
+    </div>
+    <div id="posts-my">
+      <% @posts_my.each do |post| %>
+        <%= render partial: 'post', locals: { post: post, show_share_form: true } %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="shared-lists">
+    <div class="shared">
+      <h1 class="shared-lists-text">SHARED WITH ME</h1>
+    </div>
+    <div id="posts-shared">
+      <% @posts_shared.each do |post| %>
+        <%= render partial: 'post', locals: { post: post, show_share_form: false } %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ishare-lists">
+    <div class="ishare">
+      <h1 class="ishare-lists-text">I SHARE</h1>
+    </div>
+    <div id="posts-ishare">
+      <% @posts_ishare.each do |post| %>
+        <%= render partial: 'post', locals: { post: post, show_share_form: false } %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= link_to new_post_path do %>
+  <%= image_tag 'plus.svg', alt: 'New post', class: 'new-post-icon' %>
+<% end %>
