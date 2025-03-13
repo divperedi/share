@@ -1,0 +1,13 @@
+<turbo-stream action="replace" target="<%= dom_id(@post) %>">
+  <template>
+    <%= render partial: "posts/post", formats: [:html], locals: { post: @post, show_share_form: true } %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="append" target="flash-messages">
+  <template>
+    <div class="flash-message" style="color: green;">
+      Post was successfully updated.
+    </div>
+  </template>
+</turbo-stream>

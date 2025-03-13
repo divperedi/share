@@ -1,0 +1,11 @@
+<turbo-stream action="prepend" target="posts-ishare">
+  <template>
+    <%= render partial: "posts/post", formats: [:html], locals: { post: @post, show_share_form: false, show_link: true } %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="prepend" target="<%= dom_id(@user, :posts_shared) %>_posts">
+  <template>
+    <%= render partial: "posts/post", formats: [:html], locals: { post: @post, show_share_form: false, show_link: true } %>
+  </template>
+</turbo-stream>

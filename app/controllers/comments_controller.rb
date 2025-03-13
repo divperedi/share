@@ -9,11 +9,13 @@ class CommentsController < ApplicationController
     Rails.logger.debug("Current User: #{current_user.inspect}")
   Rails.logger.debug("Post: #{@post.inspect}")
   Rails.logger.debug("Comment: #{@comment.inspect}")
-  
+
     if @comment.save
-      redirect_to @post, notice: 'Comment was successfully created.'
+      redirect_to @post, notice: "Comment was successfully created."
+      format.turbo_stream
     else
-      redirect_to @post, alert: 'Failed to create comment.'
+      redirect_to @post, alert: "Failed to create comment."
+      format.turbo_stream
     end
   end
 
@@ -25,5 +27,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content)
-  end  
+  end
 end
