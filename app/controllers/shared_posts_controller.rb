@@ -24,6 +24,7 @@ class SharedPostsController < ApplicationController
               locals: { post: @post, show_share_form: false, show_link: true }
             )
 
+
             render turbo_stream: turbo_stream.prepend(
               view_context.dom_id(@user, :posts_shared),
               partial: "posts/post",

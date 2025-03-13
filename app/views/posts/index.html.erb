@@ -28,16 +28,17 @@
   </div>
 
   <div class="ishare-lists">
-    <div class="ishare">
-      <h1 class="ishare-lists-text">I SHARE</h1>
-    </div>
-    <%= turbo_stream_from "posts_ishare" %>
-    <div id="posts-ishare">
-      <% @posts_ishare.each do |post| %>
-        <%= render partial: 'posts/post', locals: { post: post, show_share_form: false, show_link: true } %>
-      <% end %>
-    </div>
+  <div class="ishare">
+    <h1 class="ishare-lists-text">I SHARE</h1>
   </div>
+  <%= turbo_stream_from "posts_ishare_#{current_user.id}" %>
+  <div id="posts-ishare">
+    <% @posts_ishare.each do |post| %>
+      <%= render partial: 'posts/post', locals: { post: post, show_share_form: false, show_link: true } %>
+    <% end %>
+  </div>
+</div>
+
 </div>
 
 <%= link_to new_post_path do %>
