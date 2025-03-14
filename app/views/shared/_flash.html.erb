@@ -1,0 +1,39 @@
+<% flash.each do |type, message| %>
+  <div class="custom-alert <%= type == 'notice' ? 'alert-success' : 'alert-danger' %>">
+    <%= message %>
+  </div>
+<% end %>
+
+<style>  
+  .custom-alert {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50%;
+    transition: opacity 1s ease-out;
+  }
+  
+  .alert-success {
+    color: green;
+    border: 1px solid green;
+    background-color: #e6ffe6;
+  }
+  
+  .alert-danger {
+    color: red;
+    border: 1px solid red;
+    background-color: #ffe6e6;
+  }
+</style>
+
+<script>
+  document.addEventListener("turbo:load", () => {
+    setTimeout(() => {
+      document.querySelectorAll(".custom-alert").forEach(alert => {
+        alert.style.opacity = "0";
+        setTimeout(() => alert.remove(), 1000); // Remove from DOM after fade-out
+      });
+    }, 3000);
+  });
+</script>

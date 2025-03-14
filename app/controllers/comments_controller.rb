@@ -12,10 +12,10 @@ class CommentsController < ApplicationController
 
     if @comment.save
       redirect_to @post, notice: "Comment was successfully created."
-      format.turbo_stream
+      turbo_stream
     else
       redirect_to @post, alert: "Failed to create comment."
-      format.turbo_stream
+      turbo_stream
     end
   end
 

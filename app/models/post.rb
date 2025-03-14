@@ -10,11 +10,14 @@ class Post < ApplicationRecord
   after_create_commit -> { broadcast_prepend_to "posts_my" }
   after_update_commit -> { broadcast_replace_to self }
   after_destroy_commit do
+    Rails.logger.debug "Post destroyed: #{self.id}"
     broadcast_remove_to "posts_my"
-
-    # Remove post from all "Shared with Me" lists when deleted
+    broadcast_remove_to "posts_ishare_#{user.id}"
     shared_users.each do |user|
-      broadcast_remove_to view_context.dom_id(user, :posts_shared)
+      Turbo::StreamsChannel.broadcast_remove_to(
+        "posts_shared_user_#{user.id}",
+        target: dom_id(self)
+      )
     end
   end
 end
