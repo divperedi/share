@@ -44,11 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
       if @post.update(post_params)
-        flash.now[:notice] = "Post was successfully updated"
+        flash.now[:notice] = "Post was successfully updated."
 
         format.turbo_stream {
           render turbo_stream: [
@@ -56,9 +55,9 @@ class PostsController < ApplicationController
             turbo_stream.append("flash_notifications", partial: "shared/flash", locals: { flash: flash })
           ]
         }
+        format.html { redirect_to @post, notice: "Post was successfully updated." }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
         format.turbo_stream
       end
     end
@@ -66,19 +65,24 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
+    @post = Post.find(params[:id])
+
+    # This will destroy the post and its comments
     @post.destroy
 
     respond_to do |format|
-      flash.now[:notice] = "Post was successfully destroyed"
+      flash.now[:notice] = "Post and its comments were successfully destroyed"
 
-      format.turbo_stream {
+      format.turbo_stream do
         render turbo_stream: [
-          turbo_stream.remove(@post),
+          turbo_stream.remove(@post),  # Removes the post
+          turbo_stream.remove("comments_#{@post.id}"),  # Removes the comments container
           turbo_stream.append("flash_notifications", partial: "shared/flash", locals: { flash: flash })
         ]
-      }
+      end
     end
   end
+
 
   # POST /posts/1/share
   def share
@@ -88,7 +92,7 @@ class PostsController < ApplicationController
     if @user
       @shared_post = @post.shared_posts.build(user: @user)
       if @shared_post.save
-        flash[:notice] = "Post was successfully shared"
+        flash.now[:notice] = "Post was successfully shared"
 
         respond_to do |format|
           format.turbo_stream do
@@ -100,7 +104,9 @@ class PostsController < ApplicationController
               turbo_stream.prepend("posts-ishare", partial: "posts/post", locals: { post: @post, show_share_form: false, show_link: true }),
 
               # Append flash message
-              turbo_stream.append("flash_notifications", partial: "shared/flash", locals: { flash: flash })
+              turbo_stream.append("flash_notifications", partial: "shared/flash", locals: { flash: flash }),
+
+              turbo_stream.append("post-#{@post.id}-messages", partial: "shared_posts/error", locals: { message: "User not found." }), status: :unprocessable_entity
             ]
           end
           format.html { redirect_to @post, notice: "Post was successfully shared" }

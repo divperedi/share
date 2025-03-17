@@ -1,3 +1,5 @@
+<%= turbo_frame_tag "page" do %>
+<div id="page">
 <p style="color: green"><%= notice %></p>
 
 <%= turbo_stream_from @post %>
@@ -19,3 +21,5 @@
 </div>
 
 <%= render "comments/comments", post: @post %>
+</div>
+<% end %>

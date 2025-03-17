@@ -1,5 +1,7 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<div class="flash-messages">
+  <%= tag.div(flash[:alert], class: "flash-alert") if flash[:alert] %>
+  <%= tag.div(flash[:notice], class: "flash-notice") if flash[:notice] %>
+</div>
 
 <div class="login">
   <%= image_tag 'login.png', alt: 'landing background', class: 'login' %>
@@ -19,4 +21,3 @@
     </div>
   </div>
 </div>
-

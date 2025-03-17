@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     Rails.logger.debug("Current User: #{current_user.inspect}")
-  Rails.logger.debug("Post: #{@post.inspect}")
-  Rails.logger.debug("Comment: #{@comment.inspect}")
+    Rails.logger.debug("Post: #{@post.inspect}")
+    Rails.logger.debug("Comment: #{@comment.inspect}")
 
     if @comment.save
       redirect_to @post, notice: "Comment was successfully created."

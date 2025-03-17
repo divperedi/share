@@ -1,9 +1,9 @@
 <div class="comments-wrapper">
-    <h2>Comments</h2>
+  <h2>Comments</h2>
 
-    <div id="comments">
-        <%= render post.comments %>
-    </div>
+  <div id="comments_<%= post.id %>">
+    <%= render post.comments %> 
+  </div>
 
-    <%= render "comments/new", post: post%>
+  <%= render "comments/new", post: post %> 
 </div>

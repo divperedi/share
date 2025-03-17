@@ -29,3 +29,33 @@ main {
     margin-bottom: -7px;
     font-size: 14px;
 }
+
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.flash-alert, .flash-notice {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.flash-alert {
+    color: red;
+    background-color: #ffe6e6;
+    border: 1px solid red;
+}
+
+.flash-notice {
+    color: green;
+    background-color: #e6ffe6;
+    border: 1px solid green;
+}
