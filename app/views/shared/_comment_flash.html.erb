@@ -1,17 +1,25 @@
 <% flash.each do |type, message| %>
-  <div class="custom-alert <%= type == 'notice' ? 'alert-success' : 'alert-danger' %>">
+  <div class="comment-custom-alert <%= type == 'notice' ? 'alert-success' : 'alert-danger' %>">
     <%= message %>
   </div>
 <% end %>
 
 <style>  
-  .custom-alert {
+  .comment-custom-alert {
     text-align: center;
     margin: 0 auto;
     padding: 10px;
     border-radius: 5px;
     width: 50%;
-    transition: opacity 1s ease-out;
+    transition: opacity 2s ease-out;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
   }
   
   .alert-success {
@@ -30,7 +38,7 @@
 <script>
   document.addEventListener("turbo:load", () => {
     setTimeout(() => {
-      document.querySelectorAll(".custom-alert").forEach(alert => {
+      document.querySelectorAll(".comment-custom-alert").forEach(alert => {
         alert.style.opacity = "0";
         setTimeout(() => alert.remove(), 1000);
       });
@@ -38,6 +46,6 @@
   });
 
   setTimeout(() => {
-    window.location.href = "<%= posts_path %>";
+    Turbo.visit("<%= post_path(@post) %>");
   }, 1000);
 </script>

@@ -1,5 +1,7 @@
-<%= form_with model: [ post, Comment.new ], class: 'form-comment' do |form| %>
+<div id="new_comment_form">
+  <%= form_with model: [ post, Comment.new ], class: 'form-comment' do |form| %>
     <label for="comment_content" class="form-label">Your comment:</label><br>
     <%= form.text_area :content, size: "20x5" %><br>
     <%= form.submit 'Submit', class: 'form-submit' %>
-<% end %>
+  <% end %>
+</div>

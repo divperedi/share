@@ -21,3 +21,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+      document.querySelectorAll(".flash-alert, .flash-notice").forEach(flash => {
+        flash.style.transition = "opacity 1s ease-out";
+        flash.style.opacity = "0";
+        setTimeout(() => flash.remove(), 1000);
+      });
+    }, 3000);
+  });
+</script>

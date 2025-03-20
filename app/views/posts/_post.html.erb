@@ -39,6 +39,8 @@
 
   <input type="checkbox" id="toggle-share-form-<%= post.id %>" class="toggle-share-form-checkbox" style="display: none;">
   <div class="share-form">
+
+<div id="<%= dom_id(post, :share_error) %>"></div>
     <%= form_with url: post_shared_posts_path(post), method: :post, local: true do |form| %>
       <div class="field">
         <%= form.label :username, "Share with user:" %>

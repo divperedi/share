@@ -10,12 +10,24 @@ class CommentsController < ApplicationController
     Rails.logger.debug("Post: #{@post.inspect}")
     Rails.logger.debug("Comment: #{@comment.inspect}")
 
-    if @comment.save
-      redirect_to @post, notice: "Comment was successfully created."
-      turbo_stream
-    else
-      redirect_to @post, alert: "Failed to create comment."
-      turbo_stream
+    respond_to do |format|
+      if @comment.save
+        flash[:notice] = "Comment was successfully created."
+        format.html { redirect_to @post, notice: "Comment was successfully created." }
+        format.turbo_stream {
+          render turbo_stream: [
+            turbo_stream.append("comments_#{@post.id}", partial: "comments/comment", locals: { comment: @comment }),
+            turbo_stream.append("flash_notifications", partial: "shared/comment_flash", locals: { flash: flash }),
+            turbo_stream.update("new_comment_form", partial: "comments/new", locals: { post: @post })
+          ]
+        }
+      else
+        flash.now[:alert] = "Failed to create comment."
+        format.html { redirect_to @post, alert: "Failed to create comment." }
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.append("flash_notifications", partial: "shared/comment_flash", locals: { flash: flash })
+        }
+      end
     end
   end
 

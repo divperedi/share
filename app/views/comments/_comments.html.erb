@@ -1,9 +1,9 @@
 <div class="comments-wrapper">
   <h2>Comments</h2>
 
-  <div id="comments_<%= post.id %>">
-    <%= render post.comments %> 
-  </div>
+  <turbo-frame id="comments_<%= @post.id %>">
+    <%= render @post.comments %>
+  </turbo-frame>
 
-  <%= render "comments/new", post: post %> 
+  <%= render "comments/new", post: @post %>
 </div>

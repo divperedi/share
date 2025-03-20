@@ -1,5 +1,17 @@
 <turbo-stream action="append" target="comments_<%= @post.id %>">
   <template>
-    <%= render @comment %>
+    <%= render partial: "comments/comment", locals: { comment: @comment } %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="append" target="flash_notifications">
+  <template>
+    <%= render partial: "shared/comment_flash", locals: { flash: flash } %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="update" target="new_comment_form">
+  <template>
+    <%= render partial: "comments/new", locals: { post: @post } %>
   </template>
 </turbo-stream>

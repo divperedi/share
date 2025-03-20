@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes(:user)
   end
 
   # GET /posts/new
@@ -67,7 +69,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
 
-    # This will destroy the post and its comments
     @post.destroy
 
     respond_to do |format|
@@ -75,8 +76,8 @@ class PostsController < ApplicationController
 
       format.turbo_stream do
         render turbo_stream: [
-          turbo_stream.remove(@post),  # Removes the post
-          turbo_stream.remove("comments_#{@post.id}"),  # Removes the comments container
+          turbo_stream.remove(@post),
+          turbo_stream.remove("comments_#{@post.id}"),
           turbo_stream.append("flash_notifications", partial: "shared/flash", locals: { flash: flash })
         ]
       end
@@ -97,6 +98,7 @@ class PostsController < ApplicationController
         respond_to do |format|
           format.turbo_stream do
             render turbo_stream: [
+              format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@post, :share_error), partial: "shared_posts/error", locals: { message: "User not found." }) },
               # Add post to "Shared with Me" (for the shared user)
               turbo_stream.prepend("#{dom_id(@user, :posts_shared)}_posts", partial: "posts/post", locals: { post: @post, show_share_form: false, show_link: true }),
 

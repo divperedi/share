@@ -1,0 +1,18 @@
+<div class="flash-alert" style="color: red;">
+  <%= message %>
+</div>
+
+<script>
+  document.addEventListener("turbo:load", () => {
+    setTimeout(() => {
+      document.querySelectorAll(".flash-alert").forEach(alert => {
+        alert.style.opacity = "0";
+        setTimeout(() => alert.remove(), 1000);
+      });
+    }, 3000);
+  });
+
+  setTimeout(() => {
+    window.location.href = "<%= posts_path %>";
+  }, 1000);
+</script>
