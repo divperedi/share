@@ -40,7 +40,6 @@
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1);
     /* x-offset: 0, y-offset: 4px, blur: 4px, spread: 0 */
     border: 1px solid rgba(0, 0, 0, 0.1);
-    /* Added border */
     min-width: 200px;
 }
 

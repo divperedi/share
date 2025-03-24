@@ -1,5 +1,7 @@
 <% content_for :title, "Posts" %>
 
+<%= render "shared/flash" if flash.present? %>
+
 <div class="lists-container">
   <div class="personal-lists">
     <div class="my-lists">

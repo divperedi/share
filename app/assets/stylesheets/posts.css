@@ -50,16 +50,16 @@
 }
 
 .new-post-icon {
-    width: 60px; /* Adjust the size as needed */
-    height: 60px; /* Adjust the size as needed */
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-    transition: transform 0.2s; /* Add a transition effect */
-    position: fixed; /* Fix the position relative to the viewport */
-    bottom: 20px; /* Distance from the bottom of the viewport */
-    right: 20px; /* Distance from the right of the viewport */
-    z-index: 1000; /* Ensure it stays on top of other elements */
+    width: 60px;
+    height: 60px;
+    cursor: pointer; 
+    transition: transform 0.2s;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
 }
 
 .new-post-icon:hover {
-    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+    transform: scale(1.1);
 }

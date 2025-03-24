@@ -16,14 +16,14 @@
     padding: 10px;
     box-sizing: border-box; 
     display: flex;
-    align-items: center; /* Centrera texten vertikalt */
-    text-align: left; /* Placera texten horisontellt till vänster */
+    align-items: center;
+    text-align: left;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 #comment_content::placeholder {
-    text-align: left; /* Placera placeholder-texten till vänster */
+    text-align: left;
 }
 
 .form-comment {
@@ -40,16 +40,12 @@
     background-color: #F15A42;
     color: white;
     padding: 10px;
-   
     cursor: pointer;
     margin-top: 10px;
     align-self: center;
-
-   
     box-sizing: border-box;
     border: none;
     border-radius: 5px;
-
     font-family: "Instrument Sans", serif;
     font-optical-sizing: auto;
     font-weight: 500;

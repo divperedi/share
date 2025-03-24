@@ -69,38 +69,38 @@
 }
 
 .post-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  position: relative; /* Add relative positioning */
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
 }
 
 .action-icon {
-  font-size: 16px;
-  color: #333;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  position: absolute; /* Add absolute positioning */
-  right: 15px; /* Align to the right */
-  top: -55px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 15px;
+    top: -55px;
 }
 
 .action-icon:hover {
-  color: #007bff;
+    color: #007bff;
 }
 
 .share-icon {
-  width: 24px;
-  height: 24px;
-  margin: 10px;
-  cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin: 10px;
+    cursor: pointer;
 }
 
 .share-form {
-  margin-top: 20px;
-  display: none;
-  display: flex;
+    margin-top: 20px;
+    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -111,7 +111,7 @@
 }
 
 .toggle-share-form-checkbox:checked + .share-form {
-  display: block;
+    display: block;
 }
 
 .trix-content,
