@@ -6,10 +6,6 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user = current_user
 
-    Rails.logger.debug("Current User: #{current_user.inspect}")
-    Rails.logger.debug("Post: #{@post.inspect}")
-    Rails.logger.debug("Comment: #{@comment.inspect}")
-
     respond_to do |format|
       if @comment.save
         flash[:notice] = "Comment was successfully created."
